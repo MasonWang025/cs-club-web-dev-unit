@@ -3,5 +3,18 @@
 
 /* selectors: simple, combinator, pseudo-class */
 /* classes + id */
+#test {
+  color: red;
+  font-size: 200%;
+}
+
+.my-p {
+  color: blue;
+}
+
+p {
+  padding: 20px;
+  border: 2px solid black;
+}
 
 /* box model */

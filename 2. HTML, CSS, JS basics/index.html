@@ -3,42 +3,120 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>CS Club Demo</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <!-- VSCode, overview -->
     <!-- HTML doc, !doctype, comments, tag structure, emmet -->
     <!-- https://docs.emmet.io/cheat-sheet/ -->
-
+    <input type="text" id="text-input" />
+    <button id="add-button">Add item</button>
+    <ul id="todo">
+      <li>List content</li>
+    </ul>
     <!-- Headings -->
     <!-- h$*5{Heading $} -->
+    <h1 style="color: red; font-size: 300%">Heading 1</h1>
+    <h2>Heading 2</h2>
+    <h3>Heading 3</h3>
+    <h4>Heading 4</h4>
+    <h5>Heading 5</h5>
 
-    <!-- Paragraphs, strong/b, em/i -->
+    <p class="my-p">
+      <em>Lorem, ipsum dolor </em>sit amet consectetur adipisicing elit.
+      Accusantium laudantium ea dolore vitae possimus commodi alias quae, a
+      inventore tempore voluptatem reprehenderit ipsam excepturi ducimus
+      doloribus consequatur reiciendis sunt vel! Incidunt, quidem in esse
+      necessitatibus amet dolorum alias assumenda atque aperiam vitae officiis.
+      <del>Fugit</del> quod quibusdam dolorum, deserunt aut minima alias
+      perferendis quo esse architecto, omnis eligendi officiis quis, dolorem
+      magni necessitatibus commodi vero debitis nisi. Fuga inventore doloremque
+      consectetur sequi velit tenetur aliquid ullam minus amet error. Accusamus
+      similique autem quisquam, explicabo quod illo ducimus nam nulla ipsum odit
+      quia? At quos ea dolore a hic, nobis quod. Minus.
+    </p>
+    <p id="test">Second paragraph</p>
+    <p class="my-p">
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum ipsum
+      repellat odit veniam ad! Optio deserunt quis atque. Culpa excepturi nihil
+      aliquid dolore aspernatur quibusdam voluptates deserunt, necessitatibus
+      qui molestias praesentium delectus quae tempora vel minus consequuntur
+      laudantium? Dolore tenetur nesciunt beatae possimus voluptate omnis
+      impedit voluptatem veniam soluta, rerum labore voluptatum numquam cum
+      dolores magni ipsa aliquam nemo, architecto vitae. Quisquam quod itaque
+      placeat minima, ipsam molestiae provident harum. Earum cumque similique
+      ratione ipsum iusto? Assumenda commodi eos quia aliquid itaque, atque
+      reiciendis impedit! Eos voluptatem eveniet similique accusamus aliquid,
+      dolor reiciendis, alias cumque mollitia minus dolorem eius eaque?
+    </p>
 
     <!-- Semantic tags: del + ins, other tags: sup + sub -->
 
     <!-- Intermission: HTML5 rendering, W3 standard, XHTML -->
 
     <!-- lists -->
+    <ul>
+      <li>test</li>
+    </ul>
+    <ol>
+      <li><em>ordered</em> list item</li>
+    </ol>
 
     <!-- Anchor element, attributes, img element -->
     <!-- id + anchor -->
+    <a href="https://google.com" target="_blank">Test</a>
 
     <!-- Attributes: style attribute -->
     <!-- font-family: verdana, font-size, text-align, etc. -->
 
     <!-- block level vs inline, div vs span -->
+    <div>
+      CS Club rocks! <span>This is inline.</span>
+      <div>Test</div>
+    </div>
+    <div>Cs club</div>
+    -->
 
     <!-- Forms -->
     <!-- form>label[for="name-input"]{First name:}+input[type="text"] -->
-
+    <form action="">
+      <label for="name-input">First name:</label><input type="text" />
+    </form>
     <!-- Tables -->
     <!-- table>(thead>tr>th*3{Table head$})+tbody>(tr>(td[scope="row"]{Row label $})+td{Table data}*2)*3 -->
     <!-- <style>table,table * {border: 2px black solid;}</style> -->
-
+    <table>
+      <thead>
+        <tr>
+          <th>Table head1</th>
+          <th>Table head2</th>
+          <th>Table head3</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td scope="row">Row label 1</td>
+          <td>CS Club</td>
+          <td>Table data</td>
+        </tr>
+        <tr>
+          <td scope="row">Row label 2</td>
+          <td>Table data</td>
+          <td>Table data</td>
+        </tr>
+        <tr>
+          <td scope="row">Row label 3</td>
+          <td>Table data</td>
+          <td>Table data</td>
+        </tr>
+      </tbody>
+    </table>
+    <button>Test</button>
     <!-- now into CSS -->
     <!-- 3 types: external, internal, and inline -->
     <!-- <link rel="stylesheet" href="style.css"> -->
-
+    <script src="index.js"></script>
     <!-- Other elements: https://www.w3schools.com/html/html_quotation_elements.asp -->
   </body>
 </html>
