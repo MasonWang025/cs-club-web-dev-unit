@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import AddItem from "./AddItem";
 import TodoItem from "./TodoItem";
+import {addTodo, db, setTodo} from "../services/firebase";
 
 export default function TodoList(props) {
   let [items, updateItems] = useState([
@@ -9,11 +10,30 @@ export default function TodoList(props) {
     // { id: 3, completed: true, name: "History HW" },
   ]);
 
+  useEffect(() => {
+    db.collection(props.id).get().then((querySnapshot)=> {
+        let todos = [];
+        querySnapshot.forEach((doc)=>{
+          todos.push({
+            name: doc.data().name,
+            completed: doc.data().completed,
+            id: doc.id,
+            timestamp: doc.data().timestamp,
+          })
+        })
+        todos.sort((a, b) => a.timestamp - b.timestamp);
+        updateItems(todos);
+    })
+  }, [props.id])
+
   let toggleItem = (id) => {
     console.log("toggling " + id);
     // updateItems
     let updated = items.map((item) => {
-      if (item.id === id) item.completed = !item.completed;
+      if (item.id === id) {
+        item.completed = !item.completed;
+        setTodo(props.id, id, item.completed);
+      }
       return item;
     });
 
@@ -21,7 +41,8 @@ export default function TodoList(props) {
   };
 
   let addItem = (name) => {
-    updateItems([...items, { id: uuidv4(), completed: false, name: name }]);
+    let uuid = addTodo(props.id, name);
+    updateItems([...items, { id: uuid, completed: false, name: name }]);
   };
 
   return (
@@ -45,12 +66,4 @@ export default function TodoList(props) {
       </div>
     </div>
   );
-}
-
-function uuidv4() {
-  return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function (c) {
-    var r = (Math.random() * 16) | 0,
-      v = c === "x" ? r : (r & 0x3) | 0x8;
-    return v.toString(16);
-  });
 }

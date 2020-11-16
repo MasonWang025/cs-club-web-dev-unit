@@ -6,8 +6,8 @@ export default function App() {
   return (
     <div className="container text-center py-1">
       <Header title="Todo List" subtitle="By CS Club" />
-      <TodoList title="Homework" />
-      <TodoList title="Grocery" />
+      <TodoList title="Homework" id="hw"/>
+      <TodoList title="Grocery" id="grocery"/>
     </div>
   );
 }
